@@ -13,6 +13,10 @@ class LandingShip(object):
         self.fuel_tank = FuelTank()
         self.speed = 0
 
+    @property
+    def fuel(self):
+        return self.fuel_tank.percents_left
+
     def get_status(self):
         return dedent(f"""\
         Высота: {round(self.height, 2)}
